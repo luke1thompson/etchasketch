@@ -45,6 +45,19 @@ function newGrid () {
     makeGrid(size);
 }
 
+// function changeColor () {
+//     let color = prompt('What color would you like to use?', 'blue').toLowerCase();
+//     const stylesheet = document.styleSheets[0];
+
+//     for (let i = 0; i < stylesheet.cssRules.length; i++) {
+//         if(stylesheet.cssRules[i].selectorText === '.hovering') {
+//             stylesheet.cssRules[i].style.setProperty('background-color', color);
+//         }
+//     }
+// }
+
 makeGrid(16);
-const button = document.querySelector('button');
-button.addEventListener('click', newGrid);
+const newBtn = document.querySelector('#new');
+newBtn.addEventListener('click', newGrid);
+// clrBtn.addEventListener('click', changeColor);
+// const clrBtn = document.querySelector('#color');

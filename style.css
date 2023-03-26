@@ -1,12 +1,3 @@
-body {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-#new {
-    margin: 0 auto;
-}
-
 .grid {
     display: flex;
     flex-direction: column;
@@ -29,4 +20,10 @@ body {
     flex: 1 1 0;
     background-color: goldenrod;
     border: 2px solid goldenrod;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
