@@ -1,13 +1,20 @@
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#new {
+    margin: 0 auto;
+}
+
 .grid {
     display: flex;
     flex-direction: column;
-    border: 2px solid green;
-    width: 100%;
+    margin: 0 25%;
     aspect-ratio: 1/1;
 }
 
 .row {
-    border: 2px solid pink;
     display: flex;
     flex: 1 1 0;
 }
@@ -15,9 +22,11 @@
 .square {
     flex: 1 1 0;
     border: 2px solid black;
-    height: 20px;
+    transition-duration: 5s;
 }
 
-.square:hover{
-    border: 4px solid goldenrod;
+.hovering {
+    flex: 1 1 0;
+    background-color: goldenrod;
+    border: 2px solid goldenrod;
 }

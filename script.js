@@ -1,15 +1,16 @@
-let size = 16;
-console.log('go');
-
 function hovering (e) {
-
+    const square = e.srcElement;
+    square.classList.remove('square');
+    square.classList.add('hovering');
 }
 
-function mouseLeaving (e) {
-    
+function leaving (e) {
+    const square = e.srcElement;
+    square.classList.remove('hovering');
+    square.classList.add('square');
 }
 
-function makeGrid(size) {
+function makeGrid (size) {
     const grid = document.querySelector('.grid');
     let i, j;
 
@@ -21,7 +22,7 @@ function makeGrid(size) {
             const square = document.createElement('div');
             square.classList.add('square');
             square.addEventListener('mouseenter', hovering);
-            square.addEventListener('mouseleave', mouseLeaving);
+            square.addEventListener('mouseleave', leaving);
             row.appendChild(square);
         }
 
@@ -31,4 +32,19 @@ function makeGrid(size) {
     console.log('All rows appended. Grid ready.')
 }
 
-makeGrid(size);
+function newGrid () {
+    const grid = document.querySelector('.grid');
+    let size = prompt('How many squares pers side do you want?');
+
+    if (!size) {size = 16}
+
+    while (grid.firstChild) {
+        grid.removeChild(grid.firstChild);
+    }
+
+    makeGrid(size);
+}
+
+makeGrid(16);
+const button = document.querySelector('button');
+button.addEventListener('click', newGrid);
